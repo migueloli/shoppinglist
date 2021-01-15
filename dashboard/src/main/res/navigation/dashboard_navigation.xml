@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/dashboard_navigation"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.miguel.dashboard.presentation.dashboard.DashboardFragment"
+        android:label="Dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_detalhesDashboardFragment"
+            app:destination="@id/detalhesDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalhesDashboardFragment"
+        android:name="com.miguel.dashboard.presentation.detalhesdashboard.DetalhesDashboardFragment"
+        android:label="Detalhes Dashboard" />
+
+</navigation>

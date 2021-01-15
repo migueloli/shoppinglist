@@ -1,0 +1,5 @@
+include ':configuracao'
+include ':dashboard'
+include ':home'
+include ':app'
+rootProject.name = "Shopping List"

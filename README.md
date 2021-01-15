@@ -1,3 +1,3 @@
-# Shopping List in Kotlin
+# Shopping List
 
-## Project using Navigation Component, MVVM and Modularization.
+## Projeto usando Kotlin, Navigation Component, MVVM e Modularization.
