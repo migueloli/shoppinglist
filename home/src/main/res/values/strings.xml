@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="detalhes">Detalhes</string>
+    <string name="titulo_home">Home</string>
+    <string name="titulo_detalhes_home">Detalhes Home</string>
 </resources>

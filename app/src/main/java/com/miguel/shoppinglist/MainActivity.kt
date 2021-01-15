@@ -28,9 +28,22 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        navegacao()
+    }
+
+    override fun onSupportNavigateUp() = navController.navigateUp() || super.onSupportNavigateUp()
+
+    private fun navegacao() {
+        prepararNavegacao()
+        observarNavegacao()
+    }
+
+    private fun prepararNavegacao() {
         binding.navView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
 
+    private fun observarNavegacao() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.homeFragment, R.id.dashboardFragment, R.id.configuracaoFragment -> binding.navView.visibility = View.VISIBLE
@@ -38,7 +51,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    override fun onSupportNavigateUp(): Boolean = navController.navigateUp() || super.onSupportNavigateUp()
 
 }

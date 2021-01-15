@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.miguel.dashboard.presentation.dashboard.DashboardFragment"
-        android:label="Dashboard" >
+        android:label="@string/titulo_detalhes" >
         <action
             android:id="@+id/action_dashboardFragment_to_detalhesDashboardFragment"
             app:destination="@id/detalhesDashboardFragment" />
@@ -15,6 +15,6 @@
     <fragment
         android:id="@+id/detalhesDashboardFragment"
         android:name="com.miguel.dashboard.presentation.detalhesdashboard.DetalhesDashboardFragment"
-        android:label="Detalhes Dashboard" />
+        android:label="@string/titulo_detalhes_dashboard" />
 
 </navigation>

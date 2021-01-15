@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/configuracao_navigation"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/configuracao_navigation"
     app:startDestination="@id/configuracaoFragment">
 
     <fragment
         android:id="@+id/configuracaoFragment"
         android:name="com.miguel.configuracao.presentation.configuracao.ConfiguracaoFragment"
-        android:label="Configuração" />
+        android:label="@string/titulo_configuracao_fragment" />
+
 </navigation>
