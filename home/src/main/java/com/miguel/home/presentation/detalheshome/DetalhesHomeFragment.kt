@@ -1,20 +1,19 @@
 package com.miguel.home.presentation.detalheshome
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.miguel.home.databinding.DetalhesHomeFragmentBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetalhesHomeFragment : Fragment() {
 
-    private lateinit var _viewModel: DetalhesHomeViewModel
-    private val viewModel get() = _viewModel
-
     private lateinit var _binding: DetalhesHomeFragmentBinding
     private val binding get() = _binding
+
+    private val viewModel: DetalhesHomeViewModel by viewModel()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -22,7 +21,6 @@ class DetalhesHomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
         _binding = DetalhesHomeFragmentBinding.inflate(inflater, container, false)
-        _viewModel = ViewModelProvider(this).get(DetalhesHomeViewModel::class.java)
         return binding.root
     }
 

@@ -1,7 +1,6 @@
 package com.miguel.dashboard.presentation.detalhesdashboard
 
 import android.net.Uri
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,14 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.miguel.dashboard.databinding.DetalhesDashboardFragmentBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetalhesDashboardFragment : Fragment() {
 
-    private lateinit var _viewModel: DetalhesDashboardViewModel
-    private val viewModel get() = _viewModel
-
     private lateinit var _binding: DetalhesDashboardFragmentBinding
     private val binding get() = _binding
+
+    private val viewModel: DetalhesDashboardViewModel by viewModel()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -24,7 +23,6 @@ class DetalhesDashboardFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
         _binding = DetalhesDashboardFragmentBinding.inflate(inflater, container, false)
-        _viewModel = ViewModelProvider(this).get(DetalhesDashboardViewModel::class.java)
         return binding.root
     }
 

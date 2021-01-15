@@ -1,6 +1,5 @@
 package com.miguel.home.presentation.home
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.miguel.home.databinding.HomeFragmentBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
-    private lateinit var _viewModel: HomeViewModel
-    private val viewModel get() = _viewModel
-
     private lateinit var _binding: HomeFragmentBinding
     private val binding get() = _binding
+
+    private val viewModel: HomeViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +22,6 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = HomeFragmentBinding.inflate(inflater, container, false)
-        _viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         return binding.root
     }
 

@@ -1,20 +1,19 @@
 package com.miguel.configuracao.presentation.configuracao
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.miguel.configuracao.databinding.ConfiguracaoFragmentBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ConfiguracaoFragment : Fragment() {
 
-    private lateinit var _viewModel: ConfiguracaoViewModel
-    private val viewModel get() = _viewModel
-
     private lateinit var _binding: ConfiguracaoFragmentBinding
     private val binding get() = _binding
+
+    private val viewModel: ConfiguracaoViewModel by viewModel()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -22,7 +21,6 @@ class ConfiguracaoFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
         _binding = ConfiguracaoFragmentBinding.inflate(inflater, container, false)
-        _viewModel = ViewModelProvider(this).get(ConfiguracaoViewModel::class.java)
         return binding.root
     }
 
