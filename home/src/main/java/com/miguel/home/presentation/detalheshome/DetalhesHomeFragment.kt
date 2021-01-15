@@ -29,7 +29,21 @@ class DetalhesHomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.text.observe(viewLifecycleOwner) {
+        texto()
+    }
+
+    private fun texto() {
+        atualizarTexto()
+        observarTexto()
+    }
+
+    private fun atualizarTexto() {
+        val args = DetalhesHomeFragmentArgs.fromBundle(requireArguments())
+        viewModel.atualizarTexto(args.texto)
+    }
+
+    private fun observarTexto() {
+        viewModel.texto.observe(viewLifecycleOwner) {
             binding.textDetalhes.text = it
         }
     }

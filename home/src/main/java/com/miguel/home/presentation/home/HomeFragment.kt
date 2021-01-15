@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonHome.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalhesHomeFragment())
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalhesHomeFragment("Navegado pelo Home"))
         }
     }
 

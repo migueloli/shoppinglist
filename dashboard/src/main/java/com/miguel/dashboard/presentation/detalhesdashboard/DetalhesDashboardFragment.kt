@@ -32,7 +32,7 @@ class DetalhesDashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonDetalhes.setOnClickListener {
-            findNavController().navigate(Uri.parse("shoppinglist://detalhesHomeFragment"))
+            findNavController().navigate(Uri.parse("shoppinglist://detalhesHomeFragment/Navegado pela Dashboard"))
         }
     }
 

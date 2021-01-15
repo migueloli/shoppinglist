@@ -5,8 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class DetalhesHomeViewModel : ViewModel() {
-    private val _text = MutableLiveData<String>().apply {
-        value = "Este é o DetalhesHomeFragment"
+
+    private val _texto = MutableLiveData<String>()
+    val texto: LiveData<String> = _texto
+
+    fun atualizarTexto(texto: String) {
+        _texto.value = texto
     }
-    val text: LiveData<String> = _text
 }

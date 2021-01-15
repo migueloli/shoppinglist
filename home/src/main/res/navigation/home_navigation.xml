@@ -19,7 +19,11 @@
         android:name="com.miguel.home.presentation.detalheshome.DetalhesHomeFragment"
         android:label="@string/titulo_detalhes_home" >
 
-        <deepLink app:uri="shoppinglist://detalhesHomeFragment"/>
+        <argument
+            android:name="texto"
+            app:argType="string" />
+        <deepLink app:uri="shoppinglist://detalhesHomeFragment/{texto}"/>
+
 
     </fragment>
 
