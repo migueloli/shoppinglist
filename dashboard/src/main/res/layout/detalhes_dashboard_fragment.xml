@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.miguel.dashboard.presentation.detalhesdashboard.DetalhesDashboardViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,6 +23,7 @@
             android:layout_marginTop="@dimen/espacamento_metade"
             android:layout_marginEnd="@dimen/espacamento_metade"
             android:text="@string/titulo_detalhes_dashboard"
+            android:onClick="@{() -> viewModel.clicarButtonDetalhesDashboard()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

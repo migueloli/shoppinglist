@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.miguel.home.databinding.DetalhesHomeFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -14,6 +15,7 @@ class DetalhesHomeFragment : Fragment() {
     private val binding get() = _binding
 
     private val viewModel: DetalhesHomeViewModel by viewModel()
+    private val args: DetalhesHomeFragmentArgs by navArgs()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -36,7 +38,6 @@ class DetalhesHomeFragment : Fragment() {
     }
 
     private fun atualizarTexto() {
-        val args = DetalhesHomeFragmentArgs.fromBundle(requireArguments())
         viewModel.atualizarTexto(args.texto)
     }
 

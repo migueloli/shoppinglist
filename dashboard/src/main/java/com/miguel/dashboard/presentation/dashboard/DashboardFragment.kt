@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.miguel.dashboard.databinding.DashboardFragmentBinding
+import com.miguel.dashboard.presentation.enums.EstadoClique
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardFragment : Fragment() {
@@ -22,14 +23,20 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = DashboardFragmentBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonDashboard.setOnClickListener {
-            findNavController().navigate(DashboardFragmentDirections.actionDashboardFragmentToDetalhesDashboardFragment())
+        viewModel.dashboardButton.observe(viewLifecycleOwner) { estado ->
+            if(estado == EstadoClique.CLICADO) {
+                findNavController().navigate(
+                    DashboardFragmentDirections.actionDashboardFragmentToDetalhesDashboardFragment()
+                )
+                viewModel.processarCliqueButtonDashboard()
+            }
         }
     }
 
