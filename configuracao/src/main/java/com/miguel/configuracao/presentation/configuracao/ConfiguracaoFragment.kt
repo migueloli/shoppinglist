@@ -21,15 +21,8 @@ class ConfiguracaoFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
         _binding = ConfiguracaoFragmentBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        viewModel.text.observe(viewLifecycleOwner) {
-            binding.textConfiguracao.text = it
-        }
     }
 
 }

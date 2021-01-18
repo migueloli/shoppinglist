@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ConfiguracaoViewModel : ViewModel() {
-    private val _text = MutableLiveData<String>().apply {
+    private val _texto = MutableLiveData<String>().apply {
         value = "Este é o ConfiguracaoFragment"
     }
-    val text: LiveData<String> = _text
+    val texto: LiveData<String> = _texto
 }

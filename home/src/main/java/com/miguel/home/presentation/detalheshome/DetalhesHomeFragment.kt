@@ -21,6 +21,7 @@ class DetalhesHomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
         _binding = DetalhesHomeFragmentBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
         return binding.root
     }
 
@@ -32,18 +33,11 @@ class DetalhesHomeFragment : Fragment() {
 
     private fun texto() {
         atualizarTexto()
-        observarTexto()
     }
 
     private fun atualizarTexto() {
         val args = DetalhesHomeFragmentArgs.fromBundle(requireArguments())
         viewModel.atualizarTexto(args.texto)
-    }
-
-    private fun observarTexto() {
-        viewModel.texto.observe(viewLifecycleOwner) {
-            binding.textDetalhes.text = it
-        }
     }
 
 }
