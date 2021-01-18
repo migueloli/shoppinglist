@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class ConfiguracaoViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
-        value = "Este é a ConfiguracaoFragment"
+        value = "Este é o ConfiguracaoFragment"
     }
     val text: LiveData<String> = _text
 }

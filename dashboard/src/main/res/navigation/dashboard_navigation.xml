@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.miguel.dashboard.presentation.dashboard.DashboardFragment"
-        android:label="@string/titulo_detalhes" >
+        android:label="@string/titulo_dashboard" >
         <action
             android:id="@+id/action_dashboardFragment_to_detalhesDashboardFragment"
             app:destination="@id/detalhesDashboardFragment" />

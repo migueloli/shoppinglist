@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="titulo_detalhes">Detalhes</string>
+    <string name="titulo_dashboard">Dashboard</string>
     <string name="titulo_detalhes_dashboard">Detalhes Dashboard</string>
 </resources>

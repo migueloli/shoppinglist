@@ -6,10 +6,19 @@ import androidx.lifecycle.ViewModel
 
 class DetalhesHomeViewModel : ViewModel() {
 
+    companion object {
+        const val SEM_INFORMACAO = "Sem informação"
+    }
+
     private val _texto = MutableLiveData<String>()
     val texto: LiveData<String> = _texto
 
     fun atualizarTexto(texto: String) {
-        _texto.value = texto
+        if(texto.isNotEmpty()) {
+            _texto.value = texto
+        } else {
+            _texto.value = SEM_INFORMACAO
+        }
     }
+
 }

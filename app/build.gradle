@@ -39,32 +39,33 @@ android {
         dataBinding true
         viewBinding true
     }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+        exclude("META-INF/*.kotlin_module")
+    }
 }
 
 dependencies {
-    implementation project(":home")
-    implementation project(":dashboard")
-    implementation project(":configuracao")
+    appModules.each { mod ->
+        implementation project(mod)
+    }
 
-    def dependencies = rootProject.ext.dependencies
-
-    implementation dependencies.kotlin
-    implementation dependencies.core
-    implementation dependencies.appcompat
-    implementation dependencies.material
-    implementation dependencies.constraintlayout
-    implementation dependencies.navigation_fragment
-    implementation dependencies.navigation_ui
-    implementation dependencies.livedata
-    implementation dependencies.viewmodel
-    implementation dependencies.lifecycle_extensions
-    implementation dependencies.legacy_v4
-    implementation dependencies.koin
-    implementation dependencies.koin_viewmodel
-
-    def testDependencies = rootProject.ext.testDependencies
-
-    testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.android_junit
-    androidTestImplementation testDependencies.espresso
+    implementation appDependencies.kotlin
+    implementation appDependencies.core
+    implementation appDependencies.appcompat
+    implementation appDependencies.material
+    implementation appDependencies.constraintlayout
+    implementation appDependencies.navigation_fragment
+    implementation appDependencies.navigation_ui
+    implementation appDependencies.koin
 }

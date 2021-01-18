@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.miguel.configuracao.databinding.ConfiguracaoFragmentBinding
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ConfiguracaoFragment : Fragment() {
 

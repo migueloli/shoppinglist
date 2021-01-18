@@ -16,7 +16,7 @@
             android:layout_marginStart="@dimen/espacamento_metade"
             android:layout_marginTop="@dimen/espacamento_metade"
             android:layout_marginEnd="@dimen/espacamento_metade"
-            android:text="@string/titulo_detalhes"
+            android:text="@string/titulo_dashboard"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

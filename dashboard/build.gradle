@@ -39,28 +39,55 @@ android {
         dataBinding true
         viewBinding true
     }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+        exclude("META-INF/*.kotlin_module")
+    }
 }
 
 dependencies {
-    def dependencies = rootProject.ext.dependencies
+    implementation appDependencies.kotlin
+    implementation appDependencies.core
+    implementation appDependencies.appcompat
+    implementation appDependencies.material
+    implementation appDependencies.constraintlayout
+    implementation appDependencies.navigation_fragment
+    implementation appDependencies.navigation_ui
+    implementation appDependencies.livedata
+    implementation appDependencies.viewmodel
+    implementation appDependencies.lifecycle_extensions
+    implementation appDependencies.legacy_v4
+    implementation appDependencies.koin
+    implementation appDependencies.koin_viewmodel
 
-    implementation dependencies.kotlin
-    implementation dependencies.core
-    implementation dependencies.appcompat
-    implementation dependencies.material
-    implementation dependencies.constraintlayout
-    implementation dependencies.navigation_fragment
-    implementation dependencies.navigation_ui
-    implementation dependencies.livedata
-    implementation dependencies.viewmodel
-    implementation dependencies.lifecycle_extensions
-    implementation dependencies.legacy_v4
-    implementation dependencies.koin
-    implementation dependencies.koin_viewmodel
-
-    def testDependencies = rootProject.ext.testDependencies
+    debugImplementation testDependencies.fragment
+    debugImplementation testDependencies.test_core
 
     testImplementation testDependencies.junit
+    testImplementation testDependencies.hamcrest
+    testImplementation testDependencies.arch_testing
+    testImplementation testDependencies.coroutines
+    testImplementation testDependencies.android_junit
+    testImplementation testDependencies.test_core
+    testImplementation testDependencies.roboeletric
+
     androidTestImplementation testDependencies.android_junit
     androidTestImplementation testDependencies.espresso
+    androidTestImplementation testDependencies.espresso_contrib
+    androidTestImplementation testDependencies.coroutines
+    androidTestImplementation testDependencies.mockito
+    androidTestImplementation testDependencies.dexmaker_mockito
+    androidTestImplementation testDependencies.koin
+
+    kaptAndroidTest testDependencies.databinding
 }
