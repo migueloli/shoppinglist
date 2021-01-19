@@ -1,14 +1,14 @@
-package com.miguel.shoppinglist
+package com.miguel.shoppinglist.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.miguel.shoppinglist.R
 import com.miguel.shoppinglist.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

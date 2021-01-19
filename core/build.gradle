@@ -1,8 +1,7 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -10,13 +9,13 @@ android {
     buildToolsVersion rootProject.ext.build_tools_version
 
     defaultConfig {
-        applicationId rootProject.ext.application_id
         minSdkVersion rootProject.ext.min_sdk_version
         targetSdkVersion rootProject.ext.sdk_version
         versionCode rootProject.ext.code_version
         versionName rootProject.ext.name_version
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -35,11 +34,6 @@ android {
         jvmTarget = rootProject.ext.jvm_target_version.toString()
     }
 
-    buildFeatures {
-        dataBinding true
-        viewBinding true
-    }
-
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
@@ -56,14 +50,12 @@ android {
 }
 
 dependencies {
-    appModules.each { mod ->
-        implementation project(mod)
-    }
-
     implementation appDependencies.kotlin
-    implementation appDependencies.appcompat
-    implementation appDependencies.constraintlayout
-    implementation appDependencies.navigation_fragment
-    implementation appDependencies.navigation_ui
+    implementation appDependencies.room
+    implementation appDependencies.room_ktx
     implementation appDependencies.koin
+
+    kapt appDependencies.room_compiler
+
+    testImplementation testDependencies.room
 }

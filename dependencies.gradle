@@ -25,6 +25,7 @@ ext {
     coroutines_version = "1.4.2"
     fragment_version = "1.2.5"
     databinding_version = "4.1.1"
+    room_version = "2.2.5"
 
     // Testes
     junit_version = "4.13.1"
@@ -53,6 +54,9 @@ ext {
             legacy_v4            : "androidx.legacy:legacy-support-v4:$legacy_v4_version",
             koin                 : "org.koin:koin-android:$koin_version",
             koin_viewmodel       : "org.koin:koin-androidx-viewmodel:$koin_version",
+            room                 : "androidx.room:room-runtime:$room_version",
+            room_compiler        : "androidx.room:room-compiler:$room_version",
+            room_ktx             : "androidx.room:room-ktx:$room_version",
     ]
 
     // Dependências dos testes
@@ -70,12 +74,21 @@ ext {
             fragment          : "androidx.fragment:fragment-testing:$fragment_version",
             roboeletric       : "org.robolectric:robolectric:$robolectric_version",
             databinding       : "androidx.databinding:databinding-compiler:$databinding_version",
-            koin              : "org.koin:koin-test:$koin_version"
+            koin              : "org.koin:koin-test:$koin_version",
+            room              : "androidx.room:room-testing:$room_version"
     ]
 
+    // Modules
+
+    core_module = ":core"
+    home_module = ":home"
+    dashboard_module = ":dashboard"
+    configuracao_module = ":configuracao"
+
     appModules = [
-            ":home",
-            ":dashboard",
-            ":configuracao",
+            core_module,
+            home_module,
+            dashboard_module,
+            configuracao_module,
     ]
 }
