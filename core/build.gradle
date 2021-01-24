@@ -57,5 +57,10 @@ dependencies {
 
     kapt appDependencies.room_compiler
 
+    testImplementation testDependencies.junit
     testImplementation testDependencies.room
+
+    androidTestImplementation testDependencies.espresso
+    androidTestImplementation testDependencies.android_junit
+    androidTestImplementation testDependencies.coroutines
 }

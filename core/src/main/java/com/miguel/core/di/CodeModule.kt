@@ -1,10 +1,10 @@
 package com.miguel.core.di
 
 import com.miguel.core.data.database.AppDatabase
-import com.miguel.core.domain.repositories.LocalShoppingItemRepository
-import com.miguel.core.domain.repositories.LocalShoppingListRepository
-import com.miguel.core.domain.repositories.contract.ILocalShoppingItemRepository
-import com.miguel.core.domain.repositories.contract.ILocalShoppingListRepository
+import com.miguel.core.domain.repository.LocalShoppingItemRepository
+import com.miguel.core.domain.repository.LocalShoppingListRepository
+import com.miguel.core.domain.repository.contract.ILocalShoppingItemRepository
+import com.miguel.core.domain.repository.contract.ILocalShoppingListRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 

@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.miguel.core.data.entities.ShoppingListEntity
+import com.miguel.core.data.entity.ShoppingListEntity
 
 @Dao
 internal interface ShoppingListDao {

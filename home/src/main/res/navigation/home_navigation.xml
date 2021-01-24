@@ -12,6 +12,18 @@
         <action
             android:id="@+id/action_homeFragment_to_detalhesHomeFragment"
             app:destination="@id/detalhesHomeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cadastrarListFragment"
+            app:destination="@id/cadastrarListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cadastrarListFragment"
+        android:name="com.miguel.home.presentation.cadastrarlist.CadastrarListFragment"
+        android:label="@string/title_cadastrar_lista" >
+        <argument
+            android:name="shoppingListId"
+            app:argType="long" />
     </fragment>
 
     <fragment
@@ -20,11 +32,27 @@
         android:label="@string/titulo_detalhes_home" >
 
         <argument
-            android:name="texto"
-            app:argType="string" />
+            android:name="shoppingListId"
+            app:argType="long" />
+
         <deepLink app:uri="shoppinglist://detalhesHomeFragment/{texto}"/>
 
+        <action
+            android:id="@+id/action_detalhesHomeFragment_to_cadastrarItemFragment"
+            app:destination="@id/cadastrarItemFragment" />
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/cadastrarItemFragment"
+        android:name="com.miguel.home.presentation.cadastraritem.CadastrarItemFragment"
+        android:label="@string/title_cadastrar_item" >
+        <argument
+            android:name="shoppingListId"
+            app:argType="long" />
+        <argument
+            android:name="shoppingItemId"
+            app:argType="long" />
     </fragment>
 
 </navigation>

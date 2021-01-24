@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="espacamento_padrao">16dp</dimen>
     <dimen name="espacamento_metade">8dp</dimen>
+    <dimen name="tam_fonte_item_lista">20sp</dimen>
+    <dimen name="tam_fonte_item_lista_medio">16sp</dimen>
+    <dimen name="tam_titulo">22sp</dimen>
 </resources>

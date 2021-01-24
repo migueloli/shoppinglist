@@ -2,4 +2,9 @@
 <resources>
     <string name="titulo_home">Home</string>
     <string name="titulo_detalhes_home">Detalhes Home</string>
+    <string name="descricao">Descrição</string>
+    <string name="title_cadastrar_lista">Cadastrar Lista</string>
+    <string name="title_cadastrar_item">Cadastrar Item</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="valor">Valor</string>
 </resources>

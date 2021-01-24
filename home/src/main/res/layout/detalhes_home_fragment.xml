@@ -4,31 +4,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="viewModel"
-            type="com.miguel.home.presentation.detalheshome.DetalhesHomeViewModel" />
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.detalheshome.DetalhesHomeFragment">
 
-        <TextView
-            android:id="@+id/text_detalhes"
+        <ViewFlipper
+            android:id="@+id/estado_flipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/carregando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                layout="@layout/view_carregamento"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/detalhes_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        </ViewFlipper>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_adicionar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/espacamento_metade"
-            android:layout_marginTop="@dimen/espacamento_metade"
-            android:layout_marginEnd="@dimen/espacamento_metade"
-            android:textAlignment="center"
-            android:text="@{viewModel.texto}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="end|bottom"
+            android:contentDescription="@string/titulo_home"
+            android:layout_margin="@dimen/espacamento_padrao"
+            app:srcCompat="@drawable/ic_adicionar" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

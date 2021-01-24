@@ -3,7 +3,7 @@ package com.miguel.dashboard.presentation.detalhesdashboard
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.miguel.dashboard.presentation.enums.EstadoClique
+import com.miguel.dashboard.presentation.estado.EstadoClique
 
 class DetalhesDashboardViewModel : ViewModel() {
 

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.miguel.dashboard.databinding.DashboardFragmentBinding
-import com.miguel.dashboard.presentation.enums.EstadoClique
+import com.miguel.dashboard.presentation.estado.EstadoClique
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardFragment : Fragment() {
